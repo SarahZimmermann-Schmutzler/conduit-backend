@@ -25,10 +25,6 @@ then
 fi
 
 
-# Step 4: Ensure Gunicorn is in the PATH
-export PATH="$PATH:/usr/local/bin"
-
-
-# Step 5: Start the Django server using Gunicorn
+# Step 4: Start the Django server using Gunicorn
 echo "Starting the server with gunicorn..."
 exec gunicorn conduit.wsgi:application --bind 0.0.0.0:8000

@@ -1,6 +1,6 @@
 # Stage 1: Build the dependencies in an isolated environment
 #base image (specific to the app's requirements)
-FROM python:3.5-slim AS builder
+FROM python:3.6-slim AS builder
 
 WORKDIR /app
 
@@ -12,12 +12,12 @@ RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Stage 2: Copy application files into a lightweight image
-FROM python:3.5-slim
+FROM python:3.6-slim
 
 WORKDIR /app
 
 # Copy only the installed dependencies from the builder stage
-COPY --from=builder /usr/local/lib/python3.5 /usr/local/lib/python3.5
+COPY --from=builder /usr/local /usr/local
 
 # Copy the project files into the container
 COPY . $WORKDIR
