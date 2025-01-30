@@ -30,13 +30,22 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    os.getenv('IP_ADDRESS_VM')
+    'frontend',
 ]
 
+VM = os.getenv('IP_ADDRESS_VM')
+
+if VM:
+    ALLOWED_HOSTS.append(VM)
 
 CORS_ALLOWED_ORIGINS = [
-    os.getenv('IP_ADDRESS_VM_PORT')
+    'http://frontend:8282',
 ]
+
+VM_PORT = os.getenv('IP_ADDRESS_VM_PORT')
+
+if VM_PORT:
+    CORS_ALLOWED_ORIGINS.append(VM_PORT)
 
 
 #CORS_ORIGIN_WHITELIST = (
