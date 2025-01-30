@@ -18,4 +18,4 @@ python manage.py createsuperuser --noinput \
 
 # Step 3: Start the Django server using Gunicorn
 echo "Starting the server with gunicorn..."
-exec gunicorn conduit.wsgi:application --bind 0.0.0.0:8000 --worker-class gthread
+exec gunicorn conduit.wsgi:application --bind 0.0.0.0:8000
