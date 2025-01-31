@@ -38,16 +38,16 @@ VM = os.getenv('IP_ADDRESS_VM')
 if VM:
     ALLOWED_HOSTS.append(VM)
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
-#CORS_ALLOWED_ORIGINS = [
-#    'http://frontend:8282',
-#]
+CORS_ALLOWED_ORIGINS = [
+    'http://frontend:8282',
+]
 
-#VM_PORT = os.getenv('IP_ADDRESS_VM_PORT')
+VM_PORT = os.getenv('IP_ADDRESS_VM_PORT')
 
-#if VM_PORT:
-    #CORS_ALLOWED_ORIGINS.append(VM_PORT)
+if VM_PORT:
+    CORS_ALLOWED_ORIGINS.append(VM_PORT)
 
 
 #CORS_ORIGIN_WHITELIST = (
@@ -77,9 +77,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
