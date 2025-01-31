@@ -38,14 +38,16 @@ VM = os.getenv('IP_ADDRESS_VM')
 if VM:
     ALLOWED_HOSTS.append(VM)
 
-CORS_ALLOWED_ORIGINS = [
-    'http://frontend:8282',
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
-VM_PORT = os.getenv('IP_ADDRESS_VM_PORT')
+#CORS_ALLOWED_ORIGINS = [
+#    'http://frontend:8282',
+#]
 
-if VM_PORT:
-    CORS_ALLOWED_ORIGINS.append(VM_PORT)
+#VM_PORT = os.getenv('IP_ADDRESS_VM_PORT')
+
+#if VM_PORT:
+    #CORS_ALLOWED_ORIGINS.append(VM_PORT)
 
 
 #CORS_ORIGIN_WHITELIST = (
