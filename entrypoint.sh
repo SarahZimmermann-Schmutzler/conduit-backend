@@ -17,14 +17,15 @@ python manage.py createsuperuser --noinput \
 
 
 # Step 3: Check if Gunicorn is installed
-echo "Checking for gunicorn..."
-if ! command -v gunicorn &> /dev/null
-then
-    echo "Gunicorn not found. Installing..."
-    pip install gunicorn
-fi
+#echo "Checking for gunicorn..."
+#if ! command -v gunicorn &> /dev/null
+#then
+#    echo "Gunicorn not found. Installing..."
+#    pip install gunicorn
+#fi
 
 
 # Step 4: Start the Django server using Gunicorn
-echo "Starting the server with gunicorn..."
-exec gunicorn conduit.wsgi:application --bind 0.0.0.0:8000
+#echo "Starting the server with gunicorn..."
+#exec gunicorn conduit.wsgi:application --bind 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:8000
