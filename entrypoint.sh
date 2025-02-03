@@ -3,7 +3,8 @@
 # Exit immediately if any command exits with a non-zero status
 set -e
 
-python manage.py collectstatic --noinput
+# Needed if DEBUG=False
+# python manage.py collectstatic --noinput
 
 # Step 1: Run database migrations
 echo "Running database migrations..."
@@ -18,7 +19,7 @@ python manage.py createsuperuser --noinput \
   --username "$DJANGO_SUPERUSER_USERNAME"
 
 
-# Step 3: Check if Gunicorn is installed
+# Step 3: Check if Gunicorn (20.1.0) is installed
 #echo "Checking for gunicorn..."
 #if ! command -v gunicorn &> /dev/null
 #then

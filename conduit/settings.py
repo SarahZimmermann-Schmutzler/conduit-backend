@@ -25,6 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # development: True
 # production: False
+# If DEBUG=False then Whitenoise is needed for delivering the staticfiles (gunicorn and manage.py runserver)
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
@@ -158,8 +159,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = '/app/staticfiles'
+
+# Needed if DEBUG=False
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = '/app/staticfiles'
 
 
 # Tell Django about the custom `User` model we created. The string
