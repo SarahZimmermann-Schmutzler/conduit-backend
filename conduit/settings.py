@@ -41,6 +41,8 @@ if VM:
 
 # CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 #CORS_ALLOWED_ORIGINS = [
 #    'http://frontend:8282',
 #    'http://localhost:8282',
