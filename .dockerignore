@@ -27,8 +27,8 @@ coverage/
 htmlcov/
 
 # Ignore static and media files (if generated locally and collected elsewhere)
-static/
-media/
+#static/
+#media/
 
 # Ignore local environment files
 .env

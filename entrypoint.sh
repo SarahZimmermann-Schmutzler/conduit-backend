@@ -3,6 +3,8 @@
 # Exit immediately if any command exits with a non-zero status
 set -e
 
+python manage.py collectstatic --noinput
+
 # Step 1: Run database migrations
 echo "Running database migrations..."
 python manage.py makemigrations || { echo "Makemigrations failed"; exit 1; }
