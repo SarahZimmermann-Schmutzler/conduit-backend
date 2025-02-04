@@ -3,8 +3,6 @@
 # Exit immediately if any command exits with a non-zero status
 set -e
 
-# Needed if DEBUG=False
-# python manage.py collectstatic --noinput
 
 # Step 1: Run database migrations
 echo "Running database migrations..."
@@ -19,16 +17,6 @@ python manage.py createsuperuser --noinput \
   --username "$DJANGO_SUPERUSER_USERNAME"
 
 
-# Step 3: Check if Gunicorn (20.1.0) is installed
-#echo "Checking for gunicorn..."
-#if ! command -v gunicorn &> /dev/null
-#then
-#    echo "Gunicorn not found. Installing..."
-#    pip install gunicorn
-#fi
-
-
-# Step 4: Start the Django server using Gunicorn
-#echo "Starting the server with gunicorn..."
-#exec gunicorn conduit.wsgi:application --bind 0.0.0.0:8000
+# Step 3: Start the Django server 
+#echo "Starting the server..."
 python manage.py runserver 0.0.0.0:8000

@@ -28,6 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # If DEBUG=False then Whitenoise is needed for delivering the staticfiles (gunicorn and manage.py runserver)
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
+# Hosts who can send server-side requests
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
@@ -52,6 +53,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 #if VM_PORT:
 #   CORS_ALLOWED_ORIGINS.append(VM_PORT)
 
+# Hosts who can send cross-origin-requests
 CORS_ORIGIN_WHITELIST = [
     'frontend:8282',
     'localhost:8282',
@@ -67,7 +69,6 @@ if VM_PORT:
 #    '0.0.0.0:4000',
 #    'localhost:4000',
 #)
-
 
 # Application definition
 
