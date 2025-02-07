@@ -35,10 +35,10 @@ ALLOWED_HOSTS = [
     'frontend',
 ]
 
-VM = os.getenv('IP_ADDRESS_VM')
+IP_ADDRESS_VM = os.getenv('IP_ADDRESS_VM')
 
-if VM:
-    ALLOWED_HOSTS.append(VM)
+if IP_ADDRESS_VM:
+    ALLOWED_HOSTS.append(IP_ADDRESS_VM)
 
 CORS_ORIGIN_ALLOW_ALL = False
 
@@ -49,10 +49,10 @@ CORS_ORIGIN_WHITELIST = [
     '127.0.0.1:8282',
 ]
 
-VM_PORT = os.getenv('IP_ADDRESS_VM_PORT')
+IP_ADDRESS_WITH_VM_PORT = os.getenv('IP_ADDRESS_WITH_VM_PORT')
 
-if VM_PORT:
-    CORS_ORIGIN_WHITELIST.append(VM_PORT)
+if IP_ADDRESS_WITH_VM_PORT:
+    CORS_ORIGIN_WHITELIST.append(IP_ADDRESS_WITH_VM_PORT)
 
 
 # Application definition

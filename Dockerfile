@@ -8,8 +8,7 @@ WORKDIR /app
 COPY requirements.txt $WORKDIR
 
 # Upgrade pip and install dependencies
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip -r requirements.txt --no-cache-dir
 
 # Stage 2: Copy application files into a lightweight image
 FROM python:3.6-slim
