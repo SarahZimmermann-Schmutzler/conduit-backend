@@ -42,19 +42,6 @@ if IP_ADDRESS_VM:
 
 CORS_ORIGIN_ALLOW_ALL = False
 
-# Hosts who can send cross-origin-requests
-#CORS_ORIGIN_WHITELIST = [
-#    'frontend:8282',
-#    'localhost:8282',
-#    '127.0.0.1:8282',
-#]
-
-#FRONTEND_EXTERNAL_PORT = os.getenv('FRONTEND_EXTERNAL_PORT')
-
-#if IP_ADDRESS_VM and FRONTEND_EXTERNAL_PORT:
-#    IP_ADDRESS_VM_WITH_PORT = f"{IP_ADDRESS_VM}:{FRONTEND_EXTERNAL_PORT}"
-#    CORS_ORIGIN_WHITELIST.append(IP_ADDRESS_VM_WITH_PORT)
-
 CORS_ORIGIN_WHITELIST = os.getenv('CORS_ORIGIN_WHITELIST', '').split(',')
 
 # Application definition
